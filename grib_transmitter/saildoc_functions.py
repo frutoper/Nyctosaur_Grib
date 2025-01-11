@@ -4,8 +4,8 @@ import base64
 import zlib
 import sys
 sys.path.append(".")
-from src import configs
-from src import email_functions as email_func
+from grib_transmitter import configs
+from grib_transmitter import email_functions as email_func
 
 
 def encode_saildocs_grib_file(file_path):

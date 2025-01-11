@@ -4,7 +4,7 @@ import time
 
 import sys
 sys.path.append(".")
-from src import configs
+from grib_transmitter import configs
 
 
 def send_messages_to_inreach(url, gribmessage):

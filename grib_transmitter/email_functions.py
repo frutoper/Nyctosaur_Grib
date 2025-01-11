@@ -11,9 +11,9 @@ from google.auth.transport.requests import Request
 
 import sys
 sys.path.append(".")
-from src import configs
-from src import saildoc_functions as saildoc_func
-from src import inreach_functions as inreach_func
+from grib_transmitter import configs
+from grib_transmitter import saildoc_functions as saildoc_func
+from grib_transmitter import inreach_functions as inreach_func
 
 
 # Set up the Gmail API: https://developers.google.com/gmail/api/quickstart/python

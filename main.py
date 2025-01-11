@@ -2,9 +2,9 @@ import time
 import sys
 
 sys.path.append(".")
-from src import email_functions as email_func
-from src import saildoc_functions as saildoc_func
-from src import inreach_functions as inreach_func
+from grib_transmitter import email_functions as email_func
+from grib_transmitter import saildoc_functions as saildoc_func
+from grib_transmitter import inreach_functions as inreach_func
 
 if __name__ == "__main__":
     # authenticate Gmail API
