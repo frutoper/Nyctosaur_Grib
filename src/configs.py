@@ -3,7 +3,7 @@ TOKEN_PATH = './token.pickle'
 CREDENTIALS_PATH = './credentials.json'
 FILE_PATH = './files/attachments'
 LIST_OF_PREVIOUS_MESSAGES_FILE_LOCATION = "./files/prev_messages.txt"
-OUTPUT_DIR = f'C:/ProgramData/Expedition/grib/'
+OUTPUT_DIR = 'C:/ProgramData/Expedition/grib/'
 
 # GMAIL permissions: set full access permission scope (https://developers.google.com/gmail/api/auth/scopes)
 SCOPES = ['https://mail.google.com/']
