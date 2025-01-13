@@ -27,16 +27,6 @@ def gmail_authenticate():
         with open(configs.CREDS_PATH + configs.TOKEN_FILE) as f:
             data = json.load(f)
         creds = Credentials.from_authorized_user_file(configs.CREDS_PATH + configs.TOKEN_FILE)
-        print(creds)
-        # with open(configs.CREDS_PATH + configs.TOKEN_FILE, "rb") as token:
-        #     creds = pickle.load(token)
-        # Access an element
-        
-    # if not creds or not creds.valid:
-    #     creds = _get_new_or_refreshed_credentials(creds)
-    #     # Save the credentials for the next run
-    #     with open(configs.CREDS_PATH + configs.TOKEN_FILE, "wb") as token:
-    #         pickle.dump(creds, token)
     return build('gmail', 'v1', credentials=creds)
 
 
