@@ -1,6 +1,7 @@
 # Paths
-TOKEN_PATH = './token.pickle'
-CREDENTIALS_PATH = './credentials.json'
+CREDS_PATH = 'C:/Users/Getac/Documents/PythonPrograms/creds/'
+TOKEN_FILE = 'token.json'
+CREDENTIALS_FILE = 'credentials.json'
 FILE_PATH = './files/attachments'
 LIST_OF_PREVIOUS_MESSAGES_FILE_LOCATION = "./files/prev_messages.txt"
 OUTPUT_DIR = 'C:/ProgramData/Expedition/grib/'
@@ -9,8 +10,8 @@ OUTPUT_DIR = 'C:/ProgramData/Expedition/grib/'
 SCOPES = ['https://mail.google.com/']
 
 # E-Mails and Links
-GMAIL_ADDRESS = "FILL IN"
-SERVICE_EMAIL = "no.reply.inreach@garmin.com"
+GMAIL_ADDRESS = "frutoper@gmail.com"
+SERVICE_EMAIL = "8123913208@vtext.com"#"no.reply.inreach@garmin.com"
 BASE_GARMIN_REPLY_URL = 'explore.garmin.com'
 SAILDOCS_EMAIL_QUERY = "query@saildocs.com"
 SAILDOCS_RESPONSE_EMAIL = "query-reply@saildocs.com"

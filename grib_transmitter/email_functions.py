@@ -1,3 +1,4 @@
+import json
 import os
 import re
 import pickle
@@ -8,6 +9,7 @@ from datetime import datetime
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
 
 import sys
 sys.path.append(".")
@@ -15,22 +17,16 @@ from grib_transmitter import configs
 from grib_transmitter import saildoc_functions as saildoc_func
 from grib_transmitter import inreach_functions as inreach_func
 
-
 # Set up the Gmail API: https://developers.google.com/gmail/api/quickstart/python
 
 
 def gmail_authenticate():
     """Authenticates the user and returns the Gmail API service."""
     creds = None
-    if os.path.exists(configs.TOKEN_PATH):  # Check for existing token
-        with open(configs.TOKEN_PATH, "rb") as token:
-            creds = pickle.load(token)
-
-    if not creds or not creds.valid:
-        creds = _get_new_or_refreshed_credentials(creds)
-        # Save the credentials for the next run
-        with open(configs.TOKEN_PATH, "wb") as token:
-            pickle.dump(creds, token)
+    if os.path.exists(configs.CREDS_PATH + configs.TOKEN_FILE):  # Check for existing token
+        with open(configs.CREDS_PATH + configs.TOKEN_FILE) as f:
+            data = json.load(f)
+        creds = Credentials.from_authorized_user_file(configs.CREDS_PATH + configs.TOKEN_FILE)
     return build('gmail', 'v1', credentials=creds)
 
 
@@ -215,7 +211,7 @@ def _get_new_or_refreshed_credentials(creds):
     if creds and creds.expired and creds.refresh_token:
         creds.refresh(Request())
     else:
-        flow = InstalledAppFlow.from_client_secrets_file(configs.CREDENTIALS_PATH, configs.SCOPES)
+        flow = InstalledAppFlow.from_client_secrets_file(configs.CREDS_PATH + configs.CREDENTIALS_FILE, configs.SCOPES)
         creds = flow.run_local_server(port=0)
     return creds
 
