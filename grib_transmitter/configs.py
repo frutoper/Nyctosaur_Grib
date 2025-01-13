@@ -10,8 +10,8 @@ OUTPUT_DIR = 'C:/ProgramData/Expedition/grib/'
 SCOPES = ['https://mail.google.com/']
 
 # E-Mails and Links
-GMAIL_ADDRESS = "frutoper@gmail.com"
-SERVICE_EMAIL = "8123913208@vtext.com"#"no.reply.inreach@garmin.com"
+GMAIL_ADDRESS = "email@gmail.com"
+SERVICE_EMAIL = "phonenumber@vtext.com"#"no.reply.inreach@garmin.com"
 BASE_GARMIN_REPLY_URL = 'explore.garmin.com'
 SAILDOCS_EMAIL_QUERY = "query@saildocs.com"
 SAILDOCS_RESPONSE_EMAIL = "query-reply@saildocs.com"
